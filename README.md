@@ -10,7 +10,8 @@ Instructions to run the code:
 
 1.Using Command Prompt:
  
-python ...PATH...\ENPM_690_HW2_CMAC\Code\CMAC_discrete.py       // use python3 if using Linux based OS
+python ...PATH...\ENPM_690_HW2_CMAC\Code\CMAC_discrete.py         // use python3 if using Linux based OS
+
 python ...PATH...\ENPM_690_HW2_CMAC\Code\CMACcontinuous.py
 2.Using Spyder or any other IDE:
 
