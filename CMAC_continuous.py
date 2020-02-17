@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[113]:
-
 
 # Importing all the necessary libraries
 import numpy as np
@@ -31,7 +26,6 @@ X_test = test_data[:,0]
 Y_test = test_data[:,1]
 
 
-# In[114]:
 
 
 # Defining a class for associative cells
@@ -41,7 +35,6 @@ class associative:
         self.weight = []
 
 
-# In[115]:
 
 
 # Plotting the training data
@@ -51,7 +44,6 @@ plt.legend()
 plt.show()
 
 
-# In[116]:
 
 
 associative_numbers = 35
@@ -60,7 +52,6 @@ weights = np.ones((35,1))
 lr = 1
 
 
-# In[117]:
 
 
 def assoc_val(ind,g):
@@ -98,7 +89,6 @@ def assoc_val(ind,g):
     return weights
 
 
-# In[118]:
 
 
 def assoc_ind(i,g,associative_numbers,sample):
@@ -107,7 +97,6 @@ def assoc_ind(i,g,associative_numbers,sample):
     return math.floor(ind)
 
 
-# In[119]:
 
 
 # Calculating mean square error
@@ -121,7 +110,6 @@ def mean_square_error(weights,w,X_train,Y_train):
     return meansqer    
 
 
-# In[120]:
 
 
 # Function for testing the data
@@ -135,7 +123,6 @@ def testing(weights,w):
     return output
 
 
-# In[121]:
 
 
 # Calling the associative class
@@ -143,7 +130,6 @@ train = associative([],[])
 test = associative([],[])
 
 
-# In[122]:
 
 
 # Creating the associative cells
@@ -152,7 +138,6 @@ for index in X_train:
     train.weight.append(assoc_val(train.index,g))
 
 
-# In[123]:
 
 
 # Creating the asociative cells
@@ -161,14 +146,12 @@ for iy in X_test:
     test.weight.append(assoc_val(test.index,g))
 
 
-# In[124]:
 
 
 err_list = []
 err_plot = []
 
 
-# In[125]:
 
 
 previouserror = 0
@@ -176,7 +159,6 @@ currenterror = 10
 iterations = 0
 
 
-# In[126]:
 
 
 while iterations<100 and abs(previouserror - currenterror) > 0.001:
@@ -195,7 +177,6 @@ while iterations<100 and abs(previouserror - currenterror) > 0.001:
     err_plot.append(iterations)
 
 
-# In[127]:
 
 
 plt.plot(np.asarray(err_plot), np.asarray(err_list), 'r--',label = 'error convergence')
@@ -205,14 +186,12 @@ plt.legend()
 plt.show()
 
 
-# In[111]:
 
 
 output = testing(weights, test.weight)
 Accuracy =float(mean_square_error(weights,test.weight,X_test,Y_test))
 
 
-# In[112]:
 
 
 plt.plot(X_train,Y_train,'g+',label = 'training data')
@@ -222,13 +201,11 @@ plt.legend()
 plt.show()
 
 
-# In[ ]:
 
 
 
 
 
-# In[ ]:
 
 
 
