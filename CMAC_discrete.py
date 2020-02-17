@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[189]:
 
 
 import numpy as np
@@ -10,7 +7,6 @@ import math
 import random
 
 
-# In[190]:
 
 
 #Defining a class for associative cells
@@ -20,7 +16,6 @@ class associative:
         self.weight = []
 
 
-# In[208]:
 
 
 # Generating Data
@@ -31,7 +26,6 @@ x = np.arange(sample)
 y = np.sin(2*np.pi*f*x / F)
 
 
-# In[209]:
 
 
 # Dividing training data and testing data
@@ -46,7 +40,6 @@ X_test = test_data[:,0]
 Y_test = test_data[:,1]
 
 
-# In[210]:
 
 
 # plotting training data
@@ -56,7 +49,6 @@ plt.legend()
 plt.show()
 
 
-# In[211]:
 
 
 associative_numbers = 35
@@ -65,7 +57,6 @@ weights = np.ones((35,1))
 lr = 1
 
 
-# In[212]:
 
 
 def assoc_val(index,g):
@@ -76,7 +67,6 @@ def assoc_val(index,g):
     return weights    
 
 
-# In[213]:
 
 
 def assoc_ind(i,g,associative_numbers,sample):
@@ -85,7 +75,6 @@ def assoc_ind(i,g,associative_numbers,sample):
     return math.floor(ind)
 
 
-# In[214]:
 
 
 # Calculating mean square error
@@ -99,7 +88,6 @@ def mean_square_error(weights,w,X_train,Y_train):
     return meansqer    
 
 
-# In[215]:
 
 
 # Function for testing the data
@@ -113,7 +101,6 @@ def testing(weights,w):
     return output
 
 
-# In[216]:
 
 
 # Calling the associative class
@@ -121,7 +108,6 @@ train = associative([],[])
 test = associative([],[])
 
 
-# In[217]:
 
 
 # Creating the associative cells 
@@ -130,8 +116,6 @@ for index in X_train:
     train.weight.append(assoc_val(train.index,g))
 
 
-# In[218]:
-
 
 # Creating the associative cells
 for iy in X_test:
@@ -139,14 +123,10 @@ for iy in X_test:
     test.weight.append(assoc_val(test.index,g))
 
 
-# In[219]:
-
 
 err_list = []
 err_plot = []
 
-
-# In[220]:
 
 
 previouserror = 0
@@ -154,7 +134,6 @@ currenterror = 15
 iterations = 0
 
 
-# In[221]:
 
 
 while iterations<100 and abs(previouserror - currenterror) > 0.00001:
@@ -173,8 +152,6 @@ while iterations<100 and abs(previouserror - currenterror) > 0.00001:
     err_plot.append(iterations)
 
 
-# In[222]:
-
 
 # Plotting error convergence
 plt.plot(np.asarray(err_plot), np.asarray(err_list), 'r--',label = 'error convergence')
@@ -184,13 +161,9 @@ plt.legend()
 plt.show()
 
 
-# In[223]:
-
 
 output = testing(weights, test.weight)
 
-
-# In[224]:
 
 
 plt.plot(X_train,Y_train,'g+',label = 'training data')
@@ -200,33 +173,28 @@ plt.legend()
 plt.show()
 
 
-# In[225]:
-
 
 plt.plot(X_test,Y_test,'g+',label = 'test data')
 plt.legend()
 plt.show()
 
 
-# In[ ]:
 
 
 
 
 
-# In[ ]:
 
 
 
 
 
-# In[ ]:
 
 
 
 
 
-# In[ ]:
+
 
 
 
